@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: Klinika Uśmiechu — jak nowa strona zwiększyła liczbę zapytań o 340% w pierwszym miesiącu. Adsutori.">
+  <meta name="theme-color" content="#0A0A0F">
+  <title>Case Study — Klinika Uśmiechu · Adsutori</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVIGATION (identical to index) -->
+  <nav class="nav" id="nav" aria-label="Nawigacja główna">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Adsutori — strona główna">
+          Adsu<span>tori</span>
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="/#work"    class="nav__link">Projekty</a></li>
+          <li><a href="/#process" class="nav__link">Proces</a></li>
+          <li><a href="/#about"   class="nav__link">O mnie</a></li>
+        </ul>
+        <a href="/#contact" class="nav__cta">Porozmawiajmy</a>
+        <button
+          class="nav__hamburger"
+          id="hamburger"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="drawer"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Menu mobilne">
+    <a href="/#work"    class="nav__link">Projekty</a>
+    <a href="/#process" class="nav__link">Proces</a>
+    <a href="/#about"   class="nav__link">O mnie</a>
+    <a href="/#contact" class="btn-primary">
+      Porozmawiajmy
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         CASE STUDY HERO
+    ═══════════════════════════════════════ -->
+
+    <section class="cs-hero" aria-labelledby="cs-heading">
+      <div class="container">
+
+        <!-- Breadcrumb -->
+        <nav class="cs-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/" class="cs-breadcrumb__link">Adsutori</a>
+          <span class="cs-breadcrumb__sep" aria-hidden="true">/</span>
+          <a href="/#work" class="cs-breadcrumb__link">Projekty</a>
+          <span class="cs-breadcrumb__sep" aria-hidden="true">/</span>
+          <span class="cs-breadcrumb__current" aria-current="page">Klinika Uśmiechu</span>
+        </nav>
+
+        <div class="cs-hero__inner">
+
+          <div class="cs-hero__meta reveal">
+            <span class="card__tag">Gabinet medyczny</span>
+            <span class="card__tag">Landing page</span>
+            <span class="card__tag">2025</span>
+          </div>
+
+          <h1 id="cs-heading" class="cs-hero__heading reveal reveal-delay-1">
+            Klinika Uśmiechu
+          </h1>
+
+          <p class="cs-hero__sub reveal reveal-delay-2">
+            Jak nowa strona zamieniła 200 odwiedzin miesięcznie
+            w regularny dopływ nowych pacjentów.
+          </p>
+
+          <!-- Key metrics -->
+          <div class="cs-metrics reveal reveal-delay-3" aria-label="Kluczowe wyniki projektu">
+            <div class="cs-metric">
+              <span class="cs-metric__value" data-count="340">+340%</span>
+              <span class="cs-metric__label">zapytań w pierwszym miesiącu</span>
+            </div>
+            <div class="cs-metric__sep" aria-hidden="true"></div>
+            <div class="cs-metric">
+              <span class="cs-metric__value">2 tyg.</span>
+              <span class="cs-metric__label">od briefu do launchu</span>
+            </div>
+            <div class="cs-metric__sep" aria-hidden="true"></div>
+            <div class="cs-metric">
+              <span class="cs-metric__value" data-count="0">0 zł</span>
+              <span class="cs-metric__label">na reklamy — ruch organiczny</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero image placeholder -->
+        <div class="cs-hero__image reveal" role="img" aria-label="Podgląd strony Kliniki Uśmiechu">
+          <div class="cs-hero__image-inner">
+            <span class="placeholder-label">klinika-usmiech.pl — podgląd strony</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         CASE STUDY CONTENT
+    ═══════════════════════════════════════ -->
+
+    <div class="cs-content">
+      <div class="container">
+        <div class="cs-layout">
+
+          <!-- Table of contents (sticky sidebar) -->
+          <aside class="cs-toc" aria-label="Spis treści">
+            <div class="cs-toc__inner">
+              <div class="cs-toc__label">Spis treści</div>
+              <nav aria-label="Nawigacja po case study">
+                <ul class="cs-toc__list" role="list">
+                  <li>
+                    <a href="#cs-context"  class="cs-toc__link">Kontekst</a>
+                  </li>
+                  <li>
+                    <a href="#cs-problem"  class="cs-toc__link">Problem</a>
+                  </li>
+                  <li>
+                    <a href="#cs-approach" class="cs-toc__link">Podejście</a>
+                  </li>
+                  <li>
+                    <a href="#cs-solution" class="cs-toc__link">Rozwiązanie</a>
+                  </li>
+                  <li>
+                    <a href="#cs-outcome"  class="cs-toc__link">Wyniki</a>
+                  </li>
+                  <li>
+                    <a href="#cs-lessons"  class="cs-toc__link">Wnioski</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </aside>
+
+          <!-- Main article -->
+          <article class="cs-article">
+
+            <!-- Context -->
+            <section id="cs-context" class="cs-section" aria-labelledby="cs-context-heading">
+              <span class="eyebrow">01 / Kontekst</span>
+              <h2 id="cs-context-heading" class="cs-section__heading reveal">
+                Gabinet z dobrą opinią, ale niewidoczny online.
+              </h2>
+              <div class="cs-prose reveal">
+                <p>
+                  Klinika Uśmiechu to prywatny gabinet stomatologiczny w Warszawie
+                  z 8-letnim doświadczeniem i stałą bazą pacjentów z polecenia.
+                  Właściciel wiedział, że ma dobry produkt — ale nie wiedział,
+                  dlaczego strona internetowa nie przynosi nowych klientów.
+                </p>
+                <p>
+                  Strona istniała od 5 lat. Wyglądała "poprawnie". Miała adres,
+                  godziny otwarcia i listę usług. Ale nie robiła nic więcej.
+                </p>
+              </div>
+            </section>
+
+            <div class="cs-divider" aria-hidden="true"></div>
+
+            <!-- Problem -->
+            <section id="cs-problem" class="cs-section" aria-labelledby="cs-problem-heading">
+              <span class="eyebrow">02 / Problem</span>
+              <h2 id="cs-problem-heading" class="cs-section__heading reveal">
+                200 odwiedzin miesięcznie. Zero zapytań.
+              </h2>
+              <div class="cs-prose reveal">
+                <p>
+                  Po analizie Google Analytics okazało się, że strona miała
+                  ruch — głównie z wizytówki Google. Użytkownicy wchodzili,
+                  spędzali średnio 18 sekund i wychodzili.
+                </p>
+                <p>
+                  Diagnoza była prosta: strona nie odpowiadała na pytania,
+                  które zadaje potencjalny pacjent przed pierwszą wizytą.
+                </p>
+              </div>
+
+              <!-- Problem callout -->
+              <div class="cs-callout reveal" role="note">
+                <div class="cs-callout__label">Kluczowy insight</div>
+                <p class="cs-callout__text">
+                  Użytkownik nie szuka "gabinetu stomatologicznego". Szuka
+                  odpowiedzi na pytania: "Czy to bezpieczne?", "Ile to kosztuje?",
+                  "Czy ten dentysta jest dobry?", "Jak szybko dostanę wizytę?".
+                  Stara strona nie odpowiadała na żadne z nich.
+                </p>
+              </div>
+
+              <div class="cs-prose reveal">
+                <p>
+                  Trzy główne problemy starej strony:
+                </p>
+              </div>
+
+              <ul class="cs-list reveal" role="list">
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">01</span>
+                  <div>
+                    <strong>Brak social proof.</strong> Żadnych opinii, zdjęć
+                    zespołu ani certyfikatów. Użytkownik nie miał podstaw
+                    do zaufania.
+                  </div>
+                </li>
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">02</span>
+                  <div>
+                    <strong>Brak jasnego CTA.</strong> Jedynym sposobem
+                    na kontakt był numer telefonu w stopce. Formularz
+                    nie istniał.
+                  </div>
+                </li>
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">03</span>
+                  <div>
+                    <strong>Niejasna oferta.</strong> Lista 12 usług bez
+                    wyjaśnienia, dla kogo, kiedy i co to kosztuje.
+                    Chaos zamiast ścieżki decyzyjnej.
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <div class="cs-divider" aria-hidden="true"></div>
+
+            <!-- Approach -->
+            <section id="cs-approach" class="cs-section" aria-labelledby="cs-approach-heading">
+              <span class="eyebrow">03 / Podejście</span>
+              <h2 id="cs-approach-heading" class="cs-section__heading reveal">
+                Zanim zaprojektowałem piksel, zrozumiałem pacjenta.
+              </h2>
+              <div class="cs-prose reveal">
+                <p>
+                  Zacząłem od rozmowy z właścicielem o tym, jakie pytania
+                  najczęściej zadają nowi pacjenci przez telefon. To był
+                  research — nie brief graficzny.
+                </p>
+                <p>
+                  Okazało się, że 80% rozmów telefonicznych dotyczyło
+                  trzech rzeczy: ceny, dostępności terminów i tego,
+                  "czy to będzie bolało". Strona musiała odpowiedzieć
+                  na te pytania zanim ktokolwiek zadzwoni.
+                </p>
+              </div>
+
+              <div class="cs-callout cs-callout--neutral reveal" role="note">
+                <div class="cs-callout__label">Moja rola</div>
+                <p class="cs-callout__text">
+                  Strategia komunikacji, copywriting, UX, design i development.
+                  Projekt był w pełni samodzielny — od pierwszej rozmowy
+                  do wdrożenia i podpięcia analityki.
+                </p>
+              </div>
+            </section>
+
+            <div class="cs-divider" aria-hidden="true"></div>
+
+            <!-- Solution -->
+            <section id="cs-solution" class="cs-section" aria-labelledby="cs-solution-heading">
+              <span class="eyebrow">04 / Rozwiązanie</span>
+              <h2 id="cs-solution-heading" class="cs-section__heading reveal">
+                Strona jako system odpowiedzi na obiekcje.
+              </h2>
+              <div class="cs-prose reveal">
+                <p>
+                  Nowa strona była zbudowana wokół jednego celu:
+                  przeprowadzić użytkownika od "nie znam tego gabinetu"
+                  do "chcę umówić wizytę" — bez rozmowy telefonicznej.
+                </p>
+              </div>
+
+              <ul class="cs-list reveal" role="list">
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">01</span>
+                  <div>
+                    <strong>Hero z jasną obietnicą.</strong> Zamiast
+                    "Klinika Uśmiechu — stomatologia" — "Bezbolesna
+                    stomatologia w centrum Warszawy. Pierwsze wolne
+                    terminy w tym tygodniu."
+                  </div>
+                </li>
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">02</span>
+                  <div>
+                    <strong>Social proof zaraz po hero.</strong> 47 opinii
+                    Google (4.9★), zdjęcia gabinetu i zespołu, certyfikaty.
+                    Zaufanie zanim użytkownik zdąży zwątpić.
+                  </div>
+                </li>
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">03</span>
+                  <div>
+                    <strong>Uproszczona oferta.</strong> Zamiast 12 usług —
+                    3 główne ścieżki pacjenta z odpowiedzią na pytanie
+                    "ile to kosztuje" przy każdej.
+                  </div>
+                </li>
+                <li class="cs-list__item">
+                  <span class="cs-list__num" aria-hidden="true">04</span>
+                  <div>
+                    <strong>Formularz w hero.</strong> Jeden formularz
+                    z trzema polami (imię, telefon, preferowany termin)
+                    widoczny bez scrollowania.
+                  </div>
+                </li>
+              </ul>
+
+              <!-- Solution image placeholder -->
+              <div class="cs-image reveal" role="img" aria-label="Porównanie starej i nowej strony — sekcja hero">
+                <div class="cs-image__inner">
+                  <span class="placeholder-label">Before / After — hero section</span>
+                </div>
+              </div>
+
+            </section>
+
+            <div class="cs-divider" aria-hidden="true"></div>
+
+            <!-- Outcome -->
+            <section id="cs-outcome" class="cs-section" aria-labelledby="cs-outcome-heading">
+              <span class="eyebrow">05 / Wyniki</span>
+              <h2 id="cs-outcome-heading" class="cs-section__heading reveal">
+                Pierwsze zapytania w 48 godzin od launchu.
+              </h2>
+              <div class="cs-prose reveal">
+                <p>
+                  Strona weszła na żywo w środę rano. W piątek właściciel
+                  napisał, że dostał 4 nowe zapytania przez formularz —
+                  więcej niż przez poprzednie 3 miesiące łącznie.
+                </p>
+              </div>
+
+              <!-- Outcome metrics grid -->
+              <div class="cs-outcome-grid reveal" aria-label="Wyniki projektu">
+
+                <div class="cs-outcome-card">
+                  <span class="cs-outcome-card__value" data-count="340">+340%</span>
+                  <span class="cs-outcome-card__label">zapytań w pierwszym miesiącu</span>
+                  <span class="cs-outcome-card__note">vs. średnia z poprzednich 3 miesięcy</span>
+                </div>
+
+                <div class="cs-outcome-card">
+                  <span class="cs-outcome-card__value" data-count="72">−72%</span>
+                  <span class="cs-outcome-card__label">bounce rate</span>
+                  <span class="cs-outcome-card__note">z 89% do 17%</span>
+                </div>
+
+                <div class="cs-outcome-card">
+                  <span class="cs-outcome-card__value">2 min 40 s</span>
+                  <span class="cs-outcome-card__label">średni czas na stronie</span>
+                  <span class="cs-outcome-card__note">poprzednio: 18 sekund</span>
+                </div>
+
+                <div class="cs-outcome-card">
+                  <span class="cs-outcome-card__value">100%</span>
+                  <span class="cs-outcome-card__label">organiczny ruch</span>
+                  <span class="cs-outcome-card__note">zero wydatków na reklamy</span>
+                </div>
+
+              </div>
+
+              <div class="cs-prose reveal" style="margin-top: var(--space-8);">
+                <p>
+                  Po 30 dniach przeprowadziliśmy sesję optymalizacyjną.
+                  Dane pokazały, że użytkownicy mobilni konwertowali
+                  o 40% gorzej niż desktopowi — poprawiliśmy formularz
+                  na mobile, co wyrównało wyniki.
+                </p>
+              </div>
+            </section>
+
+            <div class="cs-divider" aria-hidden="true"></div>
+
+            <!-- Lessons -->
+            <section id="cs-lessons" class="cs-section" aria-labelledby="cs-lessons-heading">
+              <span class="eyebrow">06 / Wnioski</span>
+              <h2 id="cs-lessons-heading" class="cs-section__heading reveal">
+                Co z tego wynika.
+              </h2>
+              <div class="cs-prose reveal">
+                <p>
+                  Największa lekcja z tego projektu: problem rzadko leży
+                  w wyglądzie strony. Leży w tym, że strona nie odpowiada
+                  na pytania, które zadaje użytkownik zanim zdecyduje
+                  się na kontakt.
+                </p>
+                <p>
+                  Redesign bez zrozumienia tych pytań to przeprojektowanie
+                  problemu, nie jego rozwiązanie.
+                </p>
+              </div>
+
+              <div class="cs-callout reveal" role="note">
+                <div class="cs-callout__label">Kluczowy wniosek</div>
+                <p class="cs-callout__text">
+                  Research rozmowy telefoniczne → struktura strony → copy →
+                  design. Nie odwrotnie. Design był ostatnim krokiem,
+                  nie pierwszym.
+                </p>
+              </div>
+            </section>
+
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         NEXT PROJECT + CTA
+    ═══════════════════════════════════════ -->
+
+    <section class="cs-footer-cta" aria-labelledby="cs-cta-heading">
+      <div class="container">
+        <div class="cs-footer-cta__inner">
+
+          <div class="cs-footer-cta__next">
+            <span class="section-label">Następny projekt</span>
+            <a href="case-study.html" class="cs-footer-cta__next-link">
+              <span class="cs-footer-cta__next-title">RestaurantOS</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="cs-footer-cta__contact">
+            <p style="font-size: var(--text-md); color: var(--text-secondary); max-width: 360px;">
+              Masz podobny problem? Zacznij od bezpłatnej konsultacji —
+              powiem wprost, czy i jak mogę pomóc.
+            </p>
+            <a href="/#contact" class="btn-primary" style="margin-top: var(--space-6);">
+              Umów konsultację
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Stopka strony">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand-name">Adsu<span>tori</span></div>
+          <p class="footer__tagline">
+            Strony i aplikacje, które zamieniają ruch w klientów.
+            Warszawa, Polska.
+          </p>
+        </div>
+        <nav aria-label="Nawigacja stopki — strona">
+          <div class="footer__col-title">Strona</div>
+          <ul class="footer__links" role="list">
+            <li><a href="/#work"    class="footer__link">Projekty</a></li>
+            <li><a href="/#process" class="footer__link">Proces</a></li>
+            <li><a href="/#about"   class="footer__link">O mnie</a></li>
+            <li><a href="/#contact" class="footer__link">Kontakt</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Nawigacja stopki — kontakt">
+          <div class="footer__col-title">Kontakt</div>
+          <ul class="footer__links" role="list">
+            <li>
+              <a href="mailto:kontakt@adsutori.com" class="footer__link">
+                kontakt@adsutori.com
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/adsutori" class="footer__link"
+                 target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://github.com/adsutori" class="footer__link"
+                 target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2026 Adsutori</span>
+        <span class="footer__made">Zaprojektowane i zbudowane przeze mnie</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

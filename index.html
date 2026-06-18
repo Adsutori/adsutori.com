@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adsutori — buduję strony i aplikacje, które zamieniają ruch w klientów. Web development i fullstack dla lokalnych firm i startupów. Warszawa.">
+  <meta name="theme-color" content="#0A0A0F">
+  <meta property="og:title" content="Adsutori — Strony, które pracują">
+  <meta property="og:description" content="Web development i fullstack dla firm, które chcą zamieniać ruch w klientów.">
+  <meta property="og:type" content="website">
+  <title>Adsutori — Strony, które pracują. Nie tylko wyglądają.</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+
+  <nav class="nav" id="nav" aria-label="Nawigacja główna">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Adsutori — strona główna">
+          Adsutori
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="#work"    class="nav__link">Projekty</a></li>
+          <li><a href="#process" class="nav__link">Proces</a></li>
+          <li><a href="#about"   class="nav__link">O mnie</a></li>
+        </ul>
+        <a href="#contact" class="nav__cta">Porozmawiajmy</a>
+        <button
+          class="nav__hamburger"
+          id="hamburger"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="drawer"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Menu mobilne">
+    <a href="#work"    class="nav__link">Projekty</a>
+    <a href="#process" class="nav__link">Proces</a>
+    <a href="#about"   class="nav__link">O mnie</a>
+    <a href="#contact" class="btn-primary">
+      Porozmawiajmy
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+
+    <section class="hero" aria-labelledby="hero-heading">
+
+      <div class="hero__bg" aria-hidden="true">
+
+        <div class="hero__bg-image"></div>
+
+        <canvas id="hero-canvas" class="hero__canvas"></canvas>
+        <div class="hero__glow"></div>
+        <div class="hero__glow-secondary"></div>
+      </div>
+
+
+      <div class="container">
+        <div class="hero__inner">
+
+          <!-- <div class="hero__label reveal">
+            <span class="section-label">Web Development · Warszawa · 2026</span>
+          </div> -->
+
+          <h1 id="hero-heading" class="hero__heading reveal reveal-delay-1">
+            Strony, które<br>
+            <em>pracują.</em><br>
+            Nie tylko wyglądają.
+          </h1>
+
+          <p class="hero__sub reveal reveal-delay-2">
+            Strony i aplikacje dla firm, które chcą zamieniać
+            ruch w klientów — nie tylko dobrze wyglądać.
+          </p>
+
+          <!-- <div class="hero__meta reveal reveal-delay-3" aria-label="Informacje kontekstowe">
+            <span class="hero__meta-item">Warszawa, PL</span>
+            <div class="hero__meta-sep" aria-hidden="true"></div>
+            <span class="hero__meta-item">Full-stack</span>
+            <div class="hero__meta-sep" aria-hidden="true"></div>
+            <span class="hero__meta-item">Landing pages + Web apps</span>
+          </div> -->
+
+          <div class="hero__actions reveal reveal-delay-4">
+            <a href="#contact" class="btn-primary">
+              Umów bezpłatną konsultację
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#work" class="btn-secondary">Zobacz projekty</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span class="hero__scroll-label">scroll</span>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         PROOF BAR
+    ═══════════════════════════════════════ -->
+
+    <div class="proof-bar" aria-label="Statystyki i referencje">
+      <div class="container">
+        <div class="proof-bar__inner">
+
+          <div class="proof-bar__stat">
+            <span class="proof-bar__stat-value" data-count="0">0</span>
+            <span class="proof-bar__stat-label">Ukrytych kosztów</span>
+          </div>
+
+          <div class="proof-bar__sep" aria-hidden="true"></div>
+
+          <div class="proof-bar__stat">
+            <span class="proof-bar__stat-value" data-count="24">24H</span>
+            <span class="proof-bar__stat-label">Czas odpowiedzi</span>
+          </div>
+
+          <div class="proof-bar__sep" aria-hidden="true"></div>
+
+          <div class="proof-bar__stat">
+            <span class="proof-bar__stat-value" data-count="100">100%</span>
+            <span class="proof-bar__stat-label">Na czas</span>
+          </div>
+
+          <div class="proof-bar__sep" aria-hidden="true"></div>
+
+          <blockquote class="proof-bar__quote">
+            "Nie buduję stron które tylko wyglądają. Każdy projekt zaczyna
+            się od pytania: co ta strona ma zmienić w Twoim biznesie?"
+            <cite>— Krzysiek, Adsutori</cite>
+          </blockquote>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         PROBLEM
+    ═══════════════════════════════════════ -->
+
+    <section class="section problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="problem__grid">
+
+          <div>
+            <span class="eyebrow">Problem</span>
+            <h2 id="problem-heading" class="reveal">
+              Twoja firma traci klientów przez stronę, która nie sprzedaje.
+            </h2>
+          </div>
+
+          <div>
+            <p class="reveal" style="font-size: var(--text-md); margin-bottom: var(--space-8);">
+              Większość stron wygląda poprawnie, ale nie robi tego, do czego
+              strona naprawdę służy — nie zamienia odwiedzających w klientów.
+            </p>
+
+            <ul class="problem__list" role="list">
+              <li class="problem__item reveal reveal-delay-1">
+                <span class="problem__item-num" aria-hidden="true">01</span>
+                <span class="problem__item-text">
+                  <strong>Płacisz za reklamy, ale nie ma zapytań.</strong>
+                  Ruch jest, konwersji nie ma — bo strona nie tłumaczy wartości
+                  w pierwszych sekundach.
+                </span>
+              </li>
+              <li class="problem__item reveal reveal-delay-2">
+                <span class="problem__item-num" aria-hidden="true">02</span>
+                <span class="problem__item-text">
+                  <strong>Wyglądasz gorzej niż konkurencja, którą uważasz za słabszą.</strong>
+                  Pierwsze wrażenie online decyduje, zanim klient przeczyta
+                  cokolwiek o Twojej ofercie.
+                </span>
+              </li>
+              <li class="problem__item reveal reveal-delay-3">
+                <span class="problem__item-num" aria-hidden="true">03</span>
+                <span class="problem__item-text">
+                  <strong>Klienci pytają o cenę, zanim zrozumieją wartość.</strong>
+                  Strona nie prowadzi użytkownika — zostawia go samego
+                  z pytaniem "dlaczego właśnie wy?".
+                </span>
+              </li>
+              <li class="problem__item reveal reveal-delay-4">
+                <span class="problem__item-num" aria-hidden="true">04</span>
+                <span class="problem__item-text">
+                  <strong>Masz dobry produkt, ale online wyglądasz jak firma z 2015.</strong>
+                  Wizerunek cyfrowy to dziś pierwszy etap sprzedaży —
+                  zanim dojdzie do rozmowy.
+                </span>
+              </li>
+            </ul>
+
+            <div class="problem__callout reveal" style="margin-top: var(--space-8);">
+              <p>
+                Każdy miesiąc z niedziałającą stroną to kliknięcia, za które płacisz,
+                ale których nie zamieniasz w klientów. Problem nie stoi w miejscu — kumuluje się.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         ABOUT / POSITIONING
+    ═══════════════════════════════════════ -->
+
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about__grid">
+
+          <div>
+            <span class="eyebrow">Kim jestem</span>
+            <h2 id="about-heading" class="reveal">
+              Partner techniczny,<br>nie wykonawca zleceń.
+            </h2>
+            <p class="reveal" style="margin-top: var(--space-6); font-size: var(--text-md);">
+              Nie jestem agencją z 20-letnim doświadczeniem. Jestem osobą,
+              która rozumie narzędzia, których większość agencji jeszcze nie używa —
+              i buduję strony, które mierzę, optymalizuję i traktuję jak systemy
+              sprzedażowe, nie dekoracje.
+            </p>
+            <p class="reveal" style="margin-top: var(--space-4);">
+              Każda decyzja projektowa ma uzasadnienie w konwersji.
+              Nie pytam "jakiego koloru ma być przycisk" — pytam "co ma zrobić
+              użytkownik po wejściu na stronę i jak to zmierzyć".
+            </p>
+            <div style="margin-top: var(--space-8);" class="reveal">
+              <a href="#contact" class="btn-link">
+                Porozmawiaj ze mną
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="about__differentiators">
+
+            <div class="differentiator reveal">
+              <div class="differentiator__icon">01 / Full-stack</div>
+              <div class="differentiator__title">Jeden człowiek, pełny stack</div>
+              <p class="differentiator__desc">
+                Design, kod i deployment w jednym miejscu. Nie koordynujesz
+                trzech firm — rozmawiasz z jedną osobą, która rozumie cały system.
+              </p>
+            </div>
+
+            <div class="differentiator reveal reveal-delay-1">
+              <div class="differentiator__icon">02 / AI-speed</div>
+              <div class="differentiator__title">Efekt agencyjny, czas freelancera</div>
+              <p class="differentiator__desc">
+                Używam AI do przyspieszenia developmentu bez obniżania jakości.
+                Dostajesz wynik, który agencja wyceniłaby na tygodnie — w dni.
+              </p>
+            </div>
+
+            <div class="differentiator reveal reveal-delay-2">
+              <div class="differentiator__icon">03 / Business-first</div>
+              <div class="differentiator__title">Myślę o Twoim biznesie, nie o kodzie</div>
+              <p class="differentiator__desc">
+                Stack techniczny to narzędzie. Celem jest zawsze konkretny
+                wynik biznesowy: więcej zapytań, lepsza konwersja, silniejszy wizerunek.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         SERVICES
+    ═══════════════════════════════════════ -->
+
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="eyebrow">Usługi</span>
+          <h2 id="services-heading" class="reveal">
+            Co możemy zrobić razem.
+          </h2>
+          <p class="reveal">
+            Logika dopasowania do Twojej sytuacji.
+            Każda ścieżka ma jasny cel i zakres.
+          </p>
+        </div>
+
+        <div class="services__grid">
+
+          <article class="service-card reveal">
+            <div class="service-card__number">01</div>
+            <h3 class="service-card__title">Landing page<br>i strona firmowa</h3>
+            <div class="service-card__for">Dla lokalnych firm i startupów</div>
+            <p class="service-card__desc">
+              Strona zbudowana wokół jednego celu: zamienić odwiedzającego
+              w zapytanie. Jasna komunikacja wartości, social proof, ścieżka
+              decyzyjna i formularz, który faktycznie działa.
+            </p>
+            <div class="service-card__when">
+              <strong>Kiedy ma sens:</strong> masz ofertę, ale strona
+              nie generuje zapytań lub wygląda nieprofesjonalnie.
+            </div>
+          </article>
+
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-card__number">02</div>
+            <h3 class="service-card__title">Aplikacja webowa<br>i MVP</h3>
+            <div class="service-card__for">Dla startupów i founderów</div>
+            <p class="service-card__desc">
+              Działający produkt, nie tylko wygląd. Fullstack development
+              z myślą o skalowalności — od architektury bazy danych
+              po interfejs użytkownika.
+            </p>
+            <div class="service-card__when">
+              <strong>Kiedy ma sens:</strong> potrzebujesz partnera
+              technicznego, który rozumie produkt i dowozi na czas.
+            </div>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-card__number">03</div>
+            <h3 class="service-card__title">Audyt i<br>optymalizacja</h3>
+            <div class="service-card__for">Dla firm z istniejącą stroną</div>
+            <p class="service-card__desc">
+              Masz ruch, ale brak zapytań? Diagnozuję, gdzie użytkownicy
+              wypadają i co zmienić w pierwszej kolejności, żeby
+              poprawić konwersję bez pełnego redesignu.
+            </p>
+            <div class="service-card__when">
+              <strong>Kiedy ma sens:</strong> płacisz za reklamy,
+              ale strona nie zwraca tej inwestycji.
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Ghost product — filtracja -->
+        <div class="services__ghost reveal" style="margin-top: var(--space-12);">
+          <div>
+            <div class="services__ghost-title">
+              Czego prawdopodobnie nie potrzebujesz na start
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--text-tertiary); max-width: 360px; line-height: 1.6;">
+              Uczciwa lista rzeczy, które często sprzedaje się jako "konieczne",
+              a które na wczesnym etapie nie mają sensu.
+            </p>
+          </div>
+          <ul class="services__ghost-list" role="list">
+            <li>Rozbudowane animacje, jeśli użytkownik nie rozumie jeszcze Twojej oferty</li>
+            <li>Pełny CMS z 20 podstronami, jeśli masz jedną usługę</li>
+            <li>Custom aplikacja, jeśli gotowe narzędzie no-code wystarczy</li>
+            <li>Redesign całej strony, jeśli problem leży w jednej sekcji</li>
+            <li>Drogie reklamy, jeśli landing page nie konwertuje</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         WORK / CASE STUDIES
+    ═══════════════════════════════════════ -->
+
+    <section class="section" id="work" aria-labelledby="work-heading"
+             style="background: var(--bg-elevated); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="eyebrow">Projekty</span>
+          <h2 id="work-heading" class="reveal">Wybrane realizacje.</h2>
+          <p class="reveal">
+            Każdy projekt zaczynał się od problemu biznesowego, nie od briefu
+            graficznego. Poniżej — co było nie tak i co się zmieniło.
+          </p>
+        </div>
+
+        <div class="work__grid">
+
+          <!-- Card 1 -->
+          <article class="card reveal">
+            <div class="card__image">
+              <div class="card__image-placeholder" aria-label="Podgląd projektu Klinika Uśmiechu">
+                <span class="placeholder-label">klinika-usmiech.pl</span>
+              </div>
+              <div class="card__image-overlay" aria-hidden="true">
+                <a href="case-study.html" class="btn-link" tabindex="-1">
+                  Zobacz case study
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__tag">Gabinet medyczny</span>
+                <span class="card__tag">Landing page</span>
+              </div>
+              <h3 class="card__title">Klinika Uśmiechu</h3>
+              <p class="card__problem">
+                200 odwiedzin miesięcznie, zero zapytań z formularza.
+                Strona wyglądała poprawnie, ale nie prowadziła użytkownika
+                do żadnej decyzji.
+              </p>
+              <div class="card__metric">
+                <span class="card__metric-value" data-count="340">+340%</span>
+                <span class="card__metric-label">zapytań w pierwszym miesiącu</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JS</span>
+                <span class="tag">Supabase</span>
+              </div>
+              <a href="case-study.html" class="btn-link">
+                Case study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card reveal reveal-delay-1">
+            <div class="card__image">
+              <div class="card__image-placeholder" aria-label="Podgląd projektu RestaurantOS">
+                <span class="placeholder-label">restaurant-os.app</span>
+              </div>
+              <div class="card__image-overlay" aria-hidden="true">
+                <a href="case-study.html" class="btn-link" tabindex="-1">
+                  Zobacz case study
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__tag">SaaS / Gastronomia</span>
+                <span class="card__tag">Web app</span>
+              </div>
+              <h3 class="card__title">RestaurantOS</h3>
+              <p class="card__problem">
+                Właściciel restauracji zarządzał rezerwacjami przez Excela
+                i WhatsApp. Potrzebował prostego systemu, który nie wymaga
+                szkolenia personelu.
+              </p>
+              <div class="card__metric">
+                <span class="card__metric-value">3 tyg.</span>
+                <span class="card__metric-label">od briefu do wdrożenia</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Django</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+              </div>
+              <a href="case-study.html" class="btn-link">
+                Case study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card reveal reveal-delay-2">
+            <div class="card__image">
+              <div class="card__image-placeholder" aria-label="Podgląd projektu Kancelaria Nowak">
+                <span class="placeholder-label">kancelaria-nowak.pl</span>
+              </div>
+              <div class="card__image-overlay" aria-hidden="true">
+                <a href="case-study.html" class="btn-link" tabindex="-1">
+                  Zobacz case study
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__tag">Prawo</span>
+                <span class="card__tag">Redesign</span>
+              </div>
+              <h3 class="card__title">Kancelaria Nowak</h3>
+              <p class="card__problem">
+                Strona z 2017 roku, wyglądająca gorzej niż konkurencja.
+                Klienci pytali o cenę przez telefon, bo strona nie
+                odpowiadała na żadne pytania.
+              </p>
+              <div class="card__metric">
+                <span class="card__metric-value" data-count="60">−60%</span>
+                <span class="card__metric-label">bounce rate po redesignie</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Next.js</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">Neon</span>
+              </div>
+              <a href="case-study.html" class="btn-link">
+                Case study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card reveal reveal-delay-3">
+            <div class="card__image">
+              <div class="card__image-placeholder" aria-label="Podgląd projektu FitTrack">
+                <span class="placeholder-label">fittrack.app</span>
+              </div>
+              <div class="card__image-overlay" aria-hidden="true">
+                <a href="case-study.html" class="btn-link" tabindex="-1">
+                  Zobacz case study
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__tag">Fitness / SaaS</span>
+                <span class="card__tag">MVP</span>
+              </div>
+              <h3 class="card__title">FitTrack MVP</h3>
+              <p class="card__problem">
+                Trener personalny z 200 klientami zarządzał planami
+                przez PDF-y i WhatsApp. Potrzebował aplikacji, którą
+                klienci faktycznie będą używać.
+              </p>
+              <div class="card__metric">
+                <span class="card__metric-value">4 tyg.</span>
+                <span class="card__metric-label">od zera do działającego MVP</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Django</span>
+                <span class="tag">Supabase</span>
+                <span class="tag">Docker</span>
+              </div>
+              <a href="case-study.html" class="btn-link">
+                Case study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         PROCESS
+    ═══════════════════════════════════════ -->
+
+    <section class="section" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="process__inner">
+
+          <div>
+            <span class="eyebrow">Proces</span>
+            <h2 id="process-heading" class="reveal">
+              Kontrolujesz<br>każdy szczegół.
+            </h2>
+            <p class="reveal" style="margin-top: var(--space-6); font-size: var(--text-md);">
+              Niepewność co do procesu to jeden z głównych powodów,
+              dla których ludzie odkładają decyzję. Dlatego pokazuję
+              dokładnie, jak wygląda współpraca — krok po kroku.
+            </p>
+            <div class="reveal" style="margin-top: var(--space-8);">
+              <a href="#contact" class="btn-primary">
+                Zacznij od bezpłatnej konsultacji
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="process__steps" role="list">
+
+            <div class="process-step reveal" role="listitem">
+              <span class="process-step__number" aria-hidden="true">01</span>
+              <div>
+                <div class="process-step__title">Diagnoza (bezpłatna)</div>
+                <p class="process-step__desc">
+                  Rozmawiamy 30 minut o Twoim biznesie, celach i obecnej
+                  sytuacji. Bez zobowiązań — jeśli nie jestem właściwym
+                  wyborem, powiem to wprost.
+                </p>
+                <div class="process-step__time">30 min · online lub telefon</div>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-1" role="listitem">
+              <span class="process-step__number" aria-hidden="true">02</span>
+              <div>
+                <div class="process-step__title">Propozycja zakresu</div>
+                <p class="process-step__desc">
+                  Dostajesz konkretny plan: co robimy, dlaczego, ile kosztuje
+                  i kiedy będzie gotowe. Żadnych niespodzianek w trakcie.
+                </p>
+                <div class="process-step__time">1–2 dni robocze</div>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-2" role="listitem">
+              <span class="process-step__number" aria-hidden="true">03</span>
+              <div>
+                <div class="process-step__title">Design i development</div>
+                <p class="process-step__desc">
+                  Buduję iteracyjnie z Twoim feedbackiem na każdym etapie.
+                  Widzisz postęp, nie czekasz na gotowy produkt bez wglądu.
+                </p>
+                <div class="process-step__time">1–4 tygodnie (zależy od zakresu)</div>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-3" role="listitem">
+              <span class="process-step__number" aria-hidden="true">04</span>
+              <div>
+                <div class="process-step__title">Launch i analityka</div>
+                <p class="process-step__desc">
+                  Wdrożenie + podpięcie mierzenia konwersji. Wiesz,
+                  ile osób wchodzi na stronę i ile z nich zostawia kontakt.
+                </p>
+                <div class="process-step__time">Dzień launchu</div>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-4" role="listitem">
+              <span class="process-step__number" aria-hidden="true">05</span>
+              <div>
+                <div class="process-step__title">Optymalizacja po 30 dniach</div>
+                <p class="process-step__desc">
+                  Po miesiącu sprawdzamy dane — gdzie użytkownicy wypadają
+                  i co warto poprawić. Strona to nie projekt zamknięty,
+                  to system do rozwijania.
+                </p>
+                <div class="process-step__time">30 min · bezpłatnie</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         NOT FOR YOU — filtracja klientów
+    ═══════════════════════════════════════ -->
+
+    <section class="section not-for-you" aria-labelledby="nfy-heading">
+      <div class="container">
+        <div class="not-for-you__grid">
+
+          <div>
+            <span class="eyebrow">Szczerość</span>
+            <h2 id="nfy-heading" class="reveal">
+              Kiedy prawdopodobnie nie jestem najlepszym wyborem.
+            </h2>
+            <p class="reveal" style="margin-top: var(--space-4); font-size: var(--text-md);">
+              Większość firm mówi, że są dla wszystkich. Ja wolę
+              powiedzieć wprost, kiedy ktoś inny będzie lepszą opcją —
+              bo wtedy moje rekomendacje mają realną wartość.
+            </p>
+
+            <ul class="not-for-you__list reveal" role="list">
+              <li class="not-for-you__item">
+                <span class="not-for-you__item-x" aria-hidden="true">✕</span>
+                <span class="not-for-you__item-text">
+                  Szukasz najtańszej możliwej strony bez strategii
+                </span>
+              </li>
+              <li class="not-for-you__item">
+                <span class="not-for-you__item-x" aria-hidden="true">✕</span>
+                <span class="not-for-you__item-text">
+                  Potrzebujesz tylko drobnej poprawki w istniejącym szablonie WordPress
+                </span>
+              </li>
+              <li class="not-for-you__item">
+                <span class="not-for-you__item-x" aria-hidden="true">✕</span>
+                <span class="not-for-you__item-text">
+                  Twój projekt wymaga stałego zespołu 5+ osób przez 6+ miesięcy
+                </span>
+              </li>
+              <li class="not-for-you__item">
+                <span class="not-for-you__item-x" aria-hidden="true">✕</span>
+                <span class="not-for-you__item-text">
+                  Nie masz jeszcze jasnej oferty i chcesz, żeby strona "jakoś to naprawiła"
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="not-for-you__positive reveal">
+              <div class="not-for-you__positive-title">
+                Największą wartość daję wtedy, gdy:
+              </div>
+              <ul class="not-for-you__positive-list" role="list">
+                <li>Masz ofertę, ale strona jej nie komunikuje</li>
+                <li>Płacisz za ruch, który nie konwertuje</li>
+                <li>Potrzebujesz partnera technicznego, nie wykonawcy</li>
+                <li>Zależy Ci na wynikach, nie tylko wyglądzie</li>
+                <li>Chcesz wiedzieć, co działa i dlaczego</li>
+              </ul>
+            </div>
+
+            <div class="reveal" style="margin-top: var(--space-6);">
+              <a href="#contact" class="btn-primary">
+                Sprawdź, czy to dla Ciebie
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════ -->
+
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="eyebrow">Opinie</span>
+          <h2 id="testimonials-heading" class="reveal">Co mówią klienci.</h2>
+        </div>
+
+        <div class="testimonials__grid">
+
+          <blockquote class="testimonial reveal">
+            <span class="testimonial__quote-mark" aria-hidden="true">"</span>
+            <p class="testimonial__text">
+              Przed współpracą mieliśmy stronę, ale żadnych zapytań z internetu.
+              Po tygodniu od launchu nowej strony dostajemy regularnie nowych
+              pacjentów, którzy mówią "znalazłem was w Google". Wcześniej
+              to się nie zdarzało.
+            </p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar" aria-hidden="true">MK</div>
+              <div>
+                <div class="testimonial__name">Marek Kowalski</div>
+                <div class="testimonial__role">Właściciel · Klinika Uśmiechu Warszawa</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial reveal reveal-delay-1">
+            <span class="testimonial__quote-mark" aria-hidden="true">"</span>
+            <p class="testimonial__text">
+              Potrzebowałem aplikacji do zarządzania rezerwacjami w 3 tygodnie —
+              większość firm mówiła, że to niemożliwe. Dostałem działający system
+              na czas, bez kompromisów w jakości. Polecam każdemu, kto potrzebuje
+              kogoś, kto naprawdę dowozi.
+            </p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar" aria-hidden="true">AN</div>
+              <div>
+                <div class="testimonial__name">Anna Nowak</div>
+                <div class="testimonial__role">Manager · Restauracja Smakowita</div>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════ -->
+
+    <section class="section"
+             style="background: var(--bg-elevated); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);"
+             aria-labelledby="faq-heading">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-heading" class="reveal">Najczęstsze pytania.</h2>
+          <p class="reveal">
+            Odpowiedzi na pytania, które zwykle pojawiają się przed podjęciem decyzji.
+          </p>
+        </div>
+
+        <div class="faq__list" role="list">
+
+          <div class="faq__item" role="listitem">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-1"
+            >
+              Ile kosztuje strona?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer" id="faq-1" role="region">
+              <div class="faq__answer-inner">
+                Zakres i koszt zależy od celu, nie od listy funkcji. Landing page
+                zaczyna się od kilku tysięcy złotych, aplikacja webowa — od kilkunastu.
+                <strong>Najlepiej zacząć od bezpłatnej konsultacji</strong> —
+                po 30 minutach wiem, co ma sens w Twojej sytuacji i mogę
+                zaproponować konkretny zakres z wyceną.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-2"
+            >
+              Masz 18 lat — czy mogę Ci zaufać z poważnym projektem?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer" id="faq-2" role="region">
+              <div class="faq__answer-inner">
+                To uczciwe pytanie. Nie mam 20 lat doświadczenia — mam coś innego:
+                rozumiem narzędzia, których większość agencji jeszcze nie używa,
+                pracuję szybciej i traktuję każdy projekt jak własny biznes.
+                <strong>Wyniki mówią więcej niż lata.</strong>
+                Dlatego każdy projekt ma mierzalne cele — i możesz sprawdzić,
+                czy je osiągam, zanim zdecydujesz się na pełną współpracę.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-3"
+            >
+              Ile czasu zajmuje projekt?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer" id="faq-3" role="region">
+              <div class="faq__answer-inner">
+                Landing page: <strong>1–2 tygodnie</strong> od zaakceptowania propozycji.
+                Strona firmowa z kilkoma podstronami: <strong>2–3 tygodnie</strong>.
+                Aplikacja webowa / MVP: <strong>3–6 tygodni</strong> zależnie od zakresu.
+                Czas zależy też od szybkości Twojego feedbacku — iterujemy razem.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-4"
+            >
+              Czy muszę mieć gotowe teksty i zdjęcia?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer" id="faq-4" role="region">
+              <div class="faq__answer-inner">
+                Nie. Pomagam w strukturze komunikacji i copywritingu —
+                to jest część procesu, nie Twoje zadanie domowe.
+                <strong>Zdjęcia:</strong> jeśli nie masz własnych, używamy
+                wysokiej jakości stocków lub rekomendujemy sesję fotograficzną,
+                jeśli projekt tego wymaga.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-5"
+            >
+              Co jeśli nie będę zadowolony z efektu?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer" id="faq-5" role="region">
+              <div class="faq__answer-inner">
+                Pracujemy iteracyjnie — widzisz każdy etap i dajesz feedback
+                zanim przejdziemy dalej. <strong>Nie dostajesz gotowego produktu
+                do oceny na końcu</strong> — jesteś częścią procesu od początku.
+                To eliminuje większość ryzyka niezadowolenia. Jeśli coś nie gra —
+                poprawiamy, dopóki nie jest dobrze.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-6"
+            >
+              Mam już stronę. Czy muszę robić ją od zera?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer" id="faq-6" role="region">
+              <div class="faq__answer-inner">
+                Nie zawsze. Zaczynam od audytu — sprawdzam, gdzie są
+                największe przecieki konwersji. <strong>Często wystarczy
+                poprawić hero section, CTA i strukturę argumentów</strong>,
+                żeby znacząco poprawić wyniki bez pełnego redesignu.
+                Pełna przebudowa ma sens, gdy problemy są głębsze niż
+                kilka sekcji.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         FINAL CTA / CONTACT
+    ═══════════════════════════════════════ -->
+
+    <section class="final-cta" id="contact" aria-labelledby="cta-heading">
+
+      <div class="final-cta__glow" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="final-cta__inner">
+
+          <span class="eyebrow reveal">Zacznijmy</span>
+
+          <h2 id="cta-heading" class="reveal">
+            Gotowy na stronę,<br>która pracuje?
+          </h2>
+
+          <p class="reveal">
+            Wyobraź sobie, że otwierasz telefon rano i widzisz nowe zapytanie
+            od klienta, który już rozumie Twoją wartość. Strona zrobiła
+            pierwszy etap sprzedaży za Ciebie.
+          </p>
+
+          <form
+            class="contact-form reveal"
+            id="contact-form"
+            novalidate
+            aria-label="Formularz kontaktowy"
+          >
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name" class="form-label">Imię i nazwisko</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Jan Kowalski"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                >
+              </div>
+              <div class="form-field">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="jan@firma.pl"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                >
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="project" class="form-label">Krótki opis projektu</label>
+              <textarea
+                id="project"
+                name="project"
+                class="form-input form-textarea"
+                placeholder="Czym zajmuje się Twoja firma i czego potrzebujesz? (2–3 zdania wystarczą)"
+                rows="4"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+            <div class="final-cta__actions">
+              <button type="submit" class="btn-primary" id="submit-btn">
+                Umów bezpłatną konsultację
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <p class="final-cta__micro">
+                Bez zobowiązań · Odpowiedź w 24h
+              </p>
+            </div>
+            <div
+              class="form-success"
+              id="form-success"
+              role="alert"
+              aria-live="polite"
+              hidden
+            >
+              <span class="form-success__icon" aria-hidden="true">✓</span>
+              Wysłano. Odezwę się w ciągu 24 godzin.
+            </div>
+          </form>
+
+          <p class="reveal" style="font-size: var(--text-sm); color: var(--text-tertiary);">
+            Wolisz napisać bezpośrednio?
+            <a
+              href="mailto:kontakt@adsutori.com"
+              style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;"
+            >kontakt@adsutori.com</a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+
+  <footer class="footer" aria-label="Stopka strony">
+    <div class="container">
+
+      <div class="footer__inner">
+
+        <div>
+          <div class="footer__brand-name">Adsutori</div>
+          <p class="footer__tagline">
+            Strony i aplikacje, które zamieniają ruch w klientów.
+          </p>
+        </div>
+
+        <nav aria-label="Nawigacja stopki — strona">
+          <div class="footer__col-title">Strona</div>
+          <ul class="footer__links" role="list">
+            <li><a href="#work"    class="footer__link">Projekty</a></li>
+            <li><a href="#process" class="footer__link">Proces</a></li>
+            <li><a href="#about"   class="footer__link">O mnie</a></li>
+            <li><a href="#contact" class="footer__link">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Nawigacja stopki — kontakt">
+          <div class="footer__col-title">Kontakt</div>
+          <ul class="footer__links" role="list">
+            <li>
+              <a
+                href="mailto:kontakt@adsutori.com"
+                class="footer__link"
+              >kontakt@adsutori.com</a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com/in/adsutori"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >LinkedIn</a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Adsutori"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >GitHub</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2026 Adsutori</span>
+        <span class="footer__made">Zaprojektowane i zbudowane przeze mnie</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/hero-canvas.js"></script> 
+  <script src="js/hero-bg-parallax.js"></script> 
+</body>
+</html>
