@@ -1,135 +1,104 @@
 (function () {
-  function getDotPoints(svg) {
+
+  function buildPath() {
+    const svg   = document.querySelector('.process__svg');
+    const path  = document.getElementById('slalomPath');
+    const nodes = document.querySelectorAll('.process__node');
+    if (!svg || !path || nodes.length < 2) return;
+
     const svgRect = svg.getBoundingClientRect();
+    const pts = [];
 
-    return Array.from(document.querySelectorAll('.process__node .process__dot-num'))
-      .map(dot => {
-        const rect = dot.getBoundingClientRect();
-
-        return {
-          x: rect.left + rect.width / 2 - svgRect.left,
-          y: rect.top + rect.height / 2 - svgRect.top,
-        };
+    nodes.forEach(node => {
+      const dot = node.querySelector('.process__dot-num');
+      if (!dot) return;
+      const r = dot.getBoundingClientRect();
+      pts.push({
+        x: r.left + r.width  / 2 - svgRect.left,
+        y: r.top  + r.height / 2 - svgRect.top,
       });
-  }
-
-  function buildWavePath(points) {
-    if (points.length < 2) return '';
-
-    let d = `M ${points[0].x} ${points[0].y}`;
-
-    for (let i = 0; i < points.length - 1; i++) {
-      const from = points[i];
-      const to = points[i + 1];
-      const distance = to.x - from.x;
-      const lift = i % 2 === 0 ? -18 : 18;
-      const dip = i % 2 === 0 ? 18 : -18;
-
-      d += ` C ${from.x + distance * 0.28} ${from.y + lift}, ${from.x + distance * 0.38} ${from.y + lift}, ${from.x + distance * 0.5} ${from.y}`;
-      d += ` C ${from.x + distance * 0.62} ${from.y + dip}, ${from.x + distance * 0.72} ${from.y + dip}, ${to.x} ${to.y}`;
-    }
-
-    return d;
-  }
-
-  function drawWave() {
-    const svg = document.querySelector('.process__svg');
-    const path = document.getElementById('slalomPath');
-    const timeline = document.querySelector('.process__timeline');
-
-    if (!svg || !path || !timeline || window.matchMedia('(max-width: 860px)').matches) {
-      if (path) path.removeAttribute('d');
-      return;
-    }
-
-    const points = getDotPoints(svg);
-    path.setAttribute('d', buildWavePath(points));
-
-    requestAnimationFrame(() => {
-      const length = path.getTotalLength();
-      path.style.strokeDasharray = `${length} ${length}`;
-      path.style.strokeDashoffset = timeline.classList.contains('is-drawn') ? '0' : `${length}`;
-      path.style.transition = 'stroke-dashoffset 1.35s cubic-bezier(0.4, 0, 0.2, 1)';
     });
-  }
 
-  function initDrawObserver() {
-    const timeline = document.querySelector('.process__timeline');
-    const path = document.getElementById('slalomPath');
-    if (!timeline || !path) return;
+    if (pts.length < 2) return;
 
-    const revealLine = () => {
-      timeline.classList.add('is-drawn');
-      path.style.strokeDashoffset = '0';
-    };
+    // Krzywe
+    let d = `M ${pts[0].x.toFixed(1)} ${pts[0].y.toFixed(1)}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const a = pts[i];
+      const b = pts[i + 1];
 
-    const rect = timeline.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.9) {
-      revealLine();
-      return;
+      // Oba punkty kontrolne idą pionowo — krzywa "spada" z dota
+      const cp1x = a.x;
+      const cp1y = a.y + (b.y - a.y) * 0.5;
+
+      const cp2x = b.x;
+      const cp2y = b.y - (b.y - a.y) * 0.5;
+
+      d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)},`
+        + ` ${cp2x.toFixed(1)} ${cp2y.toFixed(1)},`
+        + ` ${b.x.toFixed(1)} ${b.y.toFixed(1)}`;
     }
 
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          revealLine();
-          obs.disconnect();
-        }
-      });
-    }, { threshold: 0.15 });
+    path.setAttribute('d', d);
 
-    obs.observe(timeline);
+    // Animacja rysowania
+    requestAnimationFrame(() => {
+      const len = path.getTotalLength();
+      if (!len) return;
+
+      path.style.transition      = 'none';
+      path.style.strokeDasharray = len;
+      path.style.strokeDashoffset = len;
+
+      requestAnimationFrame(() => {
+        path.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.4, 0, 0.2, 1)';
+
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              path.style.strokeDashoffset = '0';
+              obs.disconnect();
+            }
+          });
+        }, { threshold: 0.1 });
+
+        const slalom = document.querySelector('.process__slalom');
+        if (slalom) obs.observe(slalom);
+      });
+    });
   }
 
   function initNodeObserver() {
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-active');
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-active');
+          const dot = e.target.querySelector('.process__dot-num');
+          if (dot) {
+            dot.style.background = 'var(--accent, #7B6EF6)';
+            dot.style.color      = '#fff';
+          }
         }
       });
     }, { threshold: 0.5 });
 
-    document.querySelectorAll('.process__node').forEach(node => obs.observe(node));
-  }
-
-  function initHover() {
-    document.querySelectorAll('.process__node').forEach(node => {
-      const dot = node.querySelector('.process__dot-num');
-      if (!dot) return;
-
-      node.addEventListener('mouseenter', () => {
-        dot.style.background = 'var(--accent, #7B6EF6)';
-        dot.style.color = '#fff';
-      });
-
-      node.addEventListener('mouseleave', () => {
-        if (!node.classList.contains('is-active')) {
-          dot.style.background = '';
-          dot.style.color = '';
-        }
-      });
-    });
+    document.querySelectorAll('.process__node').forEach(n => obs.observe(n));
   }
 
   function init() {
-    requestAnimationFrame(() => {
-      drawWave();
-      initDrawObserver();
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      buildPath();
       initNodeObserver();
-      initHover();
-    });
+    }));
 
-    let resizeTimer;
+    let t;
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(drawWave, 150);
+      clearTimeout(t);
+      t = setTimeout(buildPath, 200);
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'complete') init();
+  else window.addEventListener('load', init);
+
 })();
