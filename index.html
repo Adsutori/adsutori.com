@@ -436,7 +436,7 @@
         </div>
 
         <!-- Ghost product — filtracja -->
-        <div class="services__ghost reveal" style="margin-top: var(--space-12);">
+        <!-- <div class="services__ghost reveal" style="margin-top: var(--space-12);">
           <div>
             <div class="services__ghost-title">
               Czego prawdopodobnie nie potrzebujesz na start
@@ -453,7 +453,7 @@
             <li>Redesign całej strony, jeśli problem leży w jednej sekcji</li>
             <li>Drogie reklamy, jeśli landing page nie konwertuje</li>
           </ul>
-        </div>
+        </div> -->
 
       </div>
     </section>
@@ -671,99 +671,130 @@
          PROCESS
     ═══════════════════════════════════════ -->
 
-    <section class="section" id="process" aria-labelledby="process-heading">
-      <div class="container">
-        <div class="process__inner">
+<section class="section" id="process" aria-labelledby="process-heading">
+  <div class="container">
 
-          <div>
-            <span class="eyebrow">Proces</span>
-            <h2 id="process-heading" class="reveal">
-              Kontrolujesz<br>każdy szczegół.
-            </h2>
-            <p class="reveal" style="margin-top: var(--space-6); font-size: var(--text-md);">
-              Niepewność co do procesu to jeden z głównych powodów,
-              dla których ludzie odkładają decyzję. Dlatego pokazuję
-              dokładnie, jak wygląda współpraca — krok po kroku.
-            </p>
-            <div class="reveal" style="margin-top: var(--space-8);">
-              <a href="#contact" class="btn-primary">
-                Zacznij od bezpłatnej konsultacji
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+    <!-- Nagłówek -->
+    <div class="process__header reveal">
+      <span class="eyebrow">Proces</span>
+      <h2 id="process-heading">Kontrolujesz<br>każdy szczegół.</h2>
+      <p class="process__subtitle">
+        Niepewność co do procesu to jeden z głównych powodów,
+        dla których ludzie odkładają decyzję. Dlatego pokazuję
+        dokładnie, jak wygląda współpraca — krok po kroku.
+      </p>
+      <a href="#contact" class="btn-primary" style="margin-top: var(--space-8); display:inline-flex;">
+        Zacznij od bezpłatnej konsultacji
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
 
-          <div class="process__steps" role="list">
+    <!-- Slalom -->
+    <div class="process__timeline" role="list">
 
-            <div class="process-step reveal" role="listitem">
-              <span class="process-step__number" aria-hidden="true">01</span>
-              <div>
-                <div class="process-step__title">Diagnoza (bezpłatna)</div>
-                <p class="process-step__desc">
-                  Rozmawiamy 30 minut o Twoim biznesie, celach i obecnej
-                  sytuacji. Bez zobowiązań — jeśli nie jestem właściwym
-                  wyborem, powiem to wprost.
-                </p>
-                <div class="process-step__time">30 min · online lub telefon</div>
-              </div>
-            </div>
+    <svg class="process__svg" aria-hidden="true">
+      <path id="slalomPath" fill="none"/>
+    </svg>
 
-            <div class="process-step reveal reveal-delay-1" role="listitem">
-              <span class="process-step__number" aria-hidden="true">02</span>
-              <div>
-                <div class="process-step__title">Propozycja zakresu</div>
-                <p class="process-step__desc">
-                  Dostajesz konkretny plan: co robimy, dlaczego, ile kosztuje
-                  i kiedy będzie gotowe. Żadnych niespodzianek w trakcie.
-                </p>
-                <div class="process-step__time">1–2 dni robocze</div>
-              </div>
-            </div>
-
-            <div class="process-step reveal reveal-delay-2" role="listitem">
-              <span class="process-step__number" aria-hidden="true">03</span>
-              <div>
-                <div class="process-step__title">Design i development</div>
-                <p class="process-step__desc">
-                  Buduję iteracyjnie z Twoim feedbackiem na każdym etapie.
-                  Widzisz postęp, nie czekasz na gotowy produkt bez wglądu.
-                </p>
-                <div class="process-step__time">1–4 tygodnie (zależy od zakresu)</div>
-              </div>
-            </div>
-
-            <div class="process-step reveal reveal-delay-3" role="listitem">
-              <span class="process-step__number" aria-hidden="true">04</span>
-              <div>
-                <div class="process-step__title">Launch i analityka</div>
-                <p class="process-step__desc">
-                  Wdrożenie + podpięcie mierzenia konwersji. Wiesz,
-                  ile osób wchodzi na stronę i ile z nich zostawia kontakt.
-                </p>
-                <div class="process-step__time">Dzień launchu</div>
-              </div>
-            </div>
-
-            <div class="process-step reveal reveal-delay-4" role="listitem">
-              <span class="process-step__number" aria-hidden="true">05</span>
-              <div>
-                <div class="process-step__title">Optymalizacja po 30 dniach</div>
-                <p class="process-step__desc">
-                  Po miesiącu sprawdzamy dane — gdzie użytkownicy wypadają
-                  i co warto poprawić. Strona to nie projekt zamknięty,
-                  to system do rozwijania.
-                </p>
-                <div class="process-step__time">30 min · bezpłatnie</div>
-              </div>
-            </div>
-
-          </div>
-
+    <!-- Krok 1 — karta GÓRA -->
+    <div class="process__node reveal" role="listitem" data-step="1">
+      <div class="process__card-top">
+        <div class="process__card">
+          <div class="process__card-tag">Bezpłatnie · 30 min</div>
+          <h3 class="process__card-title">Diagnoza</h3>
+          <p class="process__card-desc">Rozmawiamy o Twoim biznesie i celach. Bez zobowiązań — jeśli nie jestem właściwym wyborem, powiem to wprost.</p>
         </div>
       </div>
-    </section>
+      <div class="process__dot-wrap">
+        <div class="process__dot">
+          <span class="process__dot-ring"></span>
+          <span class="process__dot-num">01</span>
+        </div>
+      </div>
+      <div class="process__spacer"></div>
+    </div>
+
+    <!-- Krok 2 — karta DÓŁ -->
+    <div class="process__node reveal reveal-delay-1" role="listitem" data-step="2">
+      <div class="process__spacer"></div>
+      <div class="process__dot-wrap">
+        <div class="process__dot">
+          <span class="process__dot-ring"></span>
+          <span class="process__dot-num">02</span>
+        </div>
+      </div>
+      <div class="process__card-bottom">
+        <div class="process__card">
+          <div class="process__card-tag">1–2 dni robocze</div>
+          <h3 class="process__card-title">Oferta & umowa</h3>
+          <p class="process__card-desc">Dostajesz konkretny plan: co robimy, ile kosztuje i kiedy będzie gotowe. Zero niespodzianek.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Krok 3 — karta GÓRA -->
+    <div class="process__node reveal reveal-delay-2" role="listitem" data-step="3">
+      <div class="process__card-top">
+        <div class="process__card">
+          <div class="process__card-tag">1–4 tygodnie</div>
+          <h3 class="process__card-title">Design & dev</h3>
+          <p class="process__card-desc">Buduję iteracyjnie z Twoim feedbackiem. Widzisz postęp na każdym etapie.</p>
+        </div>
+      </div>
+      <div class="process__dot-wrap">
+        <div class="process__dot">
+          <span class="process__dot-ring"></span>
+          <span class="process__dot-num">03</span>
+        </div>
+      </div>
+      <div class="process__spacer"></div>
+    </div>
+
+    <!-- Krok 4 — karta DÓŁ -->
+    <div class="process__node reveal reveal-delay-3" role="listitem" data-step="4">
+      <div class="process__spacer"></div>
+      <div class="process__dot-wrap">
+        <div class="process__dot">
+          <span class="process__dot-ring"></span>
+          <span class="process__dot-num">04</span>
+        </div>
+      </div>
+      <div class="process__card-bottom">
+        <div class="process__card">
+          <div class="process__card-tag">Dzień launchu</div>
+          <h3 class="process__card-title">Launch & analityka</h3>
+          <p class="process__card-desc">Wdrożenie + mierzenie konwersji. Wiesz ile osób wchodzi i ile zostawia kontakt.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Krok 5 — karta GÓRA -->
+    <div class="process__node reveal reveal-delay-4" role="listitem" data-step="5">
+      <div class="process__card-top">
+        <div class="process__card">
+          <div class="process__card-tag">Bezpłatnie · 30 min</div>
+          <h3 class="process__card-title">Optymalizacja</h3>
+          <p class="process__card-desc">Po miesiącu sprawdzamy dane — gdzie wypadają użytkownicy i co warto poprawić.</p>
+        </div>
+      </div>
+      <div class="process__dot-wrap">
+        <div class="process__dot">
+          <span class="process__dot-ring"></span>
+          <span class="process__dot-num">05</span>
+        </div>
+      </div>
+      <div class="process__spacer"></div>
+    </div>
+
+</div>
+
+
+    </div>
+  </div>
+</section>
+
 
 
     <!-- ═══════════════════════════════════════
@@ -1215,5 +1246,6 @@
   <script src="js/hero-canvas.js"></script> 
   <script src="js/hero-bg-parallax.js"></script> 
   <script src="js/about-video.js" defer></script>
+  <script src="js/process-slalom.js" defer></script>
 </body>
 </html>
