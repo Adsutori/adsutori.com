@@ -797,6 +797,110 @@
   color: var(--text-disabled);
 }
 
+/* Dwie karty równej szerokości */
+.services__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Lista w karcie */
+.service-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.service-card__list li {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  padding-left: var(--space-4);
+  position: relative;
+  line-height: 1.5;
+}
+
+.service-card__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 2px;
+}
+
+/* Blok podejście */
+.services__approach {
+  margin-top: var(--space-8);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+
+.services__approach-item {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  flex: 1;
+}
+
+.services__approach-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.services__approach-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.services__approach-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.services__approach-sep {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services__grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .services__approach {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .services__approach-sep {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+  }
+}
+
+
 /* ─── WORK GRID ─── */
 
 .work__grid {
@@ -1248,6 +1352,166 @@
   color: var(--text-tertiary);
   letter-spacing: 0.06em;
 }
+
+/* ─── PRZYCISK — stan ładowania ─────────────────────────── */
+.btn-primary[data-loading] {
+  opacity: 0.75;
+  cursor: wait;
+  letter-spacing: 0.02em;
+}
+
+/* ─── FORMULARZ — wejście po powrocie ───────────────────── */
+.contact-form.is-entering {
+  animation: formEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes formEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── SUCCESS — znikanie ────────────────────────────────── */
+.form-success.is-hiding-out {
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ─── SUCCESS — fix wyrównania ──────────────────────────── */
+.form-success {
+  display: flex;
+  align-items: center;   /* ← było flex-start, zmieniamy na center */
+  gap: 14px;
+  padding: 20px 24px;
+}
+
+.form-success__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 0;        /* ← usuwa ewesntualny offset */
+}
+
+.form-success__icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin-top: 0;         /* ← reset marginu który mógł przesuwać ikonę */
+}
+
+
+/* ─── CONTACT FORM ──────────────────────────────────────── */
+
+.contact-form {
+  width: 100%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.contact-form.is-hiding {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+.contact-form.is-entering {
+  animation: formEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes formEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── PRZYCISK ───────────────────────────────────────────── */
+
+.btn-primary[data-loading] {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+/* ─── BŁĄD ───────────────────────────────────────────────── */
+
+.form-error-msg {
+  font-size: var(--text-sm);
+  color: #f87171;
+  text-align: center;
+  font-family: var(--font-mono);
+  line-height: 1.5;
+}
+
+.form-error-msg[hidden] {
+  display: none !important;
+}
+
+/* ─── SUCCESS BOX ────────────────────────────────────────── */
+
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 24px 32px;
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1.5px solid rgba(99, 210, 140, 0.35);
+  border-radius: var(--radius-lg);
+  background: transparent;
+
+  /* Stan wejściowy */
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.form-success.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.form-success.is-hiding-out {
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#form-success[hidden] {
+  display: none !important;
+}
+
+.form-success__title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: #63d28c;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+}
+
+.form-success__sub {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.25s, transform 0.4s ease 0.25s;
+}
+
+.form-success.is-visible .form-success__title,
+.form-success.is-visible .form-success__sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ─── FOOTER ─── */
 

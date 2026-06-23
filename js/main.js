@@ -253,38 +253,25 @@
   const form       = document.getElementById('contact-form');
   const submitBtn  = document.getElementById('submit-btn');
   const successMsg = document.getElementById('form-success');
+  const errorEl    = document.getElementById('form-error');
 
   if (!form) return;
 
-  /**
-   * Validate a single input element.
-   * Returns true if valid, false otherwise.
-   * @param {HTMLInputElement|HTMLTextAreaElement} input
-   * @returns {boolean}
-   */
+  // ─── Walidacja ────────────────────────────────────────────
   function validateField(input) {
     const value = input.value.trim();
-    let valid   = true;
-
-    if (input.required && !value) {
-      valid = false;
-    }
-
+    let valid = true;
+    if (input.required && !value) valid = false;
     if (input.type === 'email' && value) {
-      // Simple RFC-ish check
       valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
-
     input.classList.toggle('is-error', !valid);
     input.setAttribute('aria-invalid', String(!valid));
     return valid;
   }
 
-  // Live validation on blur (not on every keystroke — less annoying)
   form.querySelectorAll('.form-input').forEach(input => {
     input.addEventListener('blur', () => validateField(input));
-
-    // Clear error state as soon as user starts correcting
     input.addEventListener('input', () => {
       if (input.classList.contains('is-error')) {
         input.classList.remove('is-error');
@@ -293,72 +280,103 @@
     });
   });
 
+  // ─── Helpers ──────────────────────────────────────────────
+  function resetBtn() {
+    submitBtn.disabled = false;
+    submitBtn.removeAttribute('data-loading');
+    submitBtn.innerHTML = `Umów bezpłatną konsultację
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+  }
+
+  function showError(msg) {
+    if (!errorEl) return;
+    errorEl.textContent = msg;
+    errorEl.hidden = false;
+    setTimeout(() => { errorEl.hidden = true; }, 6000);
+  }
+
+  // ─── Submit ───────────────────────────────────────────────
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Validate all fields
-    const inputs  = Array.from(form.querySelectorAll('.form-input'));
+    const inputs   = Array.from(form.querySelectorAll('.form-input'));
     const allValid = inputs.map(validateField).every(Boolean);
-
     if (!allValid) {
-      // Focus first invalid field
       const firstError = form.querySelector('.is-error');
       if (firstError) firstError.focus();
       return;
     }
 
-    // Loading state
-    submitBtn.disabled    = true;
-    submitBtn.textContent = 'Wysyłanie…';
+    // Ładowanie
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('data-loading', 'true');
+    let dots = 0;
+    const loadingInterval = setInterval(() => {
+      dots = (dots + 1) % 4;
+      submitBtn.textContent = 'Wysyłanie' + '.'.repeat(dots);
+    }, 350);
 
     try {
-      /*
-       * PRODUCTION NOTE:
-       * Replace this with your actual form endpoint.
-       * Options: Formspree, Netlify Forms, custom API route.
-       *
-       * Example with Formspree:
-       * const res = await fetch('https://formspree.io/f/YOUR_ID', {
-       *   method: 'POST',
-       *   headers: { 'Accept': 'application/json' },
-       *   body: new FormData(form)
-       * });
-       * if (!res.ok) throw new Error('Network response was not ok');
-       */
+      const res = await fetch('https://formspree.io/f/xnjkndrl', {
+        method:  'POST',
+        headers: { 'Accept': 'application/json' },
+        body:    new FormData(form),
+      });
 
-      // Simulated async submission (replace with real fetch above)
-      await new Promise(resolve => setTimeout(resolve, 900));
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data?.errors?.[0]?.message || 'Błąd serwera');
+      }
 
-      // Success state
+      clearInterval(loadingInterval);
       form.reset();
-      form.hidden           = true;
-      successMsg.hidden     = false;
-      successMsg.focus();
+
+      // Formularz wygasa
+      form.classList.add('is-hiding');
+
+      setTimeout(() => {
+        form.hidden = true;
+        form.classList.remove('is-hiding');
+        successMsg.hidden = false;
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          successMsg.classList.add('is-visible');
+          successMsg.focus();
+        }));
+
+        // Auto-znikanie po 10s
+        setTimeout(() => {
+          successMsg.classList.remove('is-visible');
+          successMsg.classList.add('is-hiding-out');
+
+          setTimeout(() => {
+            successMsg.hidden = true;
+            successMsg.classList.remove('is-hiding-out');
+            form.hidden = false;
+            resetBtn();
+
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              form.classList.add('is-entering');
+              setTimeout(() => form.classList.remove('is-entering'), 500);
+            }));
+          }, 600);
+        }, 10000);
+
+      }, 400);
 
     } catch (err) {
-      // Restore button on error
-      submitBtn.disabled    = false;
-      submitBtn.textContent = 'Umów bezpłatną konsultację';
-
-      // Show inline error (accessible)
-      const errorEl = document.createElement('p');
-      errorEl.setAttribute('role', 'alert');
-      errorEl.style.cssText = `
-        font-size: var(--text-sm);
-        color: #f87171;
-        margin-top: var(--space-2);
-        font-family: var(--font-mono);
-      `;
-      errorEl.textContent = 'Coś poszło nie tak. Napisz bezpośrednio na kontakt@adsutori.com';
-
-      // Remove previous error if exists
-      const prev = form.querySelector('[role="alert"]');
-      if (prev) prev.remove();
-
-      form.appendChild(errorEl);
+      clearInterval(loadingInterval);
+      console.error('Form error:', err);
+      resetBtn();
+      showError('Coś poszło nie tak. Napisz bezpośrednio na kontakt@adsutori.com');
     }
   });
 })();
+
+
 
 
 /* ─── SMOOTH SCROLL FOR ANCHOR LINKS ─── */
