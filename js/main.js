@@ -377,8 +377,6 @@
 })();
 
 
-
-
 /* ─── SMOOTH SCROLL FOR ANCHOR LINKS ─── */
 
 (function initSmoothScroll() {

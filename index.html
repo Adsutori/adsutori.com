@@ -8,7 +8,8 @@
   <meta property="og:title" content="Adsutori — Strony, które pracują">
   <meta property="og:description" content="Web development i fullstack dla firm, które chcą zamieniać ruch w klientów.">
   <meta property="og:type" content="website">
-  <title>Adsutori — Strony, które pracują. Nie tylko wyglądają.</title>
+  <title>Adsutori | Strony, które pracują. Nie tylko wyglądają.</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -156,13 +157,13 @@
             <span class="proof-bar__stat-label">Na czas</span>
           </div>
 
-          <div class="proof-bar__sep" aria-hidden="true"></div>
+          <!-- <div class="proof-bar__sep" aria-hidden="true"></div>
 
           <blockquote class="proof-bar__quote">
             "Nie buduję stron, które tylko wyglądają. Każdy projekt zaczyna
             się od pytania: co ta strona ma zmienić w Twoim biznesie?"
             <cite>— Krzysiek, Adsutori</cite>
-          </blockquote>
+          </blockquote> -->
 
         </div>
       </div>
@@ -385,53 +386,49 @@
           </p>
         </div>
 
-        <!-- Dwie główne karty -->
-        <div class="services__grid services__grid--two reveal">
+        <!-- Trzy główne karty -->
+        <div class="services__grid services__grid--three reveal">
 
           <article class="service-card">
             <div class="service-card__number">01</div>
             <h3 class="service-card__title">Landing page<br>i strona firmowa</h3>
             <div class="service-card__for">Wizytówki · Landing pages · Strony wielostronicowe</div>
-            <!-- <p class="service-card__desc">
-              Projektuję i buduję strony, które komunikują wartość i zamieniają
-              odwiedzających w zapytania. Jasna struktura, social proof, ścieżka
-              decyzyjna i formularz, który faktycznie działa.
-            </p> -->
             <ul class="service-card__list">
               <li>Strona wizytówka dla lokalnej firmy</li>
               <li>Landing page pod kampanię reklamową</li>
               <li>Strona wielostronicowa z blogiem lub portfolio</li>
               <li>Redesign i odświeżenie istniejącej strony</li>
             </ul>
-            <!-- <div class="service-card__when">
-              <strong>Kiedy ma sens:</strong> masz ofertę, ale strona jej nie komunikuje
-              albo nie generuje żadnych zapytań.
-            </div> -->
           </article>
 
           <article class="service-card reveal reveal-delay-1">
             <div class="service-card__number">02</div>
             <h3 class="service-card__title">Aplikacja webowa<br>i MVP</h3>
             <div class="service-card__for">Proste aplikacje · MVP · Narzędzia wewnętrzne</div>
-            <!-- <p class="service-card__desc">
-              Działający produkt, nie tylko wygląd. Buduję proste aplikacje
-              webowe i MVP z myślą o tym, żeby dało się je uruchomić szybko —
-              i rozwijać dalej bez przepisywania od zera.
-            </p> -->
             <ul class="service-card__list">
               <li>MVP dla startupu lub pomysłu produktowego</li>
               <li>System rezerwacji, formularzy lub zamówień</li>
               <li>Panel klienta lub dashboard</li>
               <li>Narzędzie wewnętrzne dla zespołu</li>
             </ul>
-            <!-- <div class="service-card__when">
-              <strong>Kiedy ma sens:</strong> potrzebujesz partnera technicznego,
-              który rozumie produkt i dowozi na czas.
-            </div> -->
           </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-card__number">03</div>
+            <h3 class="service-card__title">Utrzymanie<br>i wsparcie</h3>
+            <div class="service-card__for">Maintenance · Aktualizacje · Rozwój</div>
+            <ul class="service-card__list">
+              <li>Regularne aktualizacje i poprawki bezpieczeństwa</li>
+              <li>Nowe podstrony i zmiany w treści</li>
+              <li>Monitoring dostępności i szybkości</li>
+              <li>Rozwój funkcji w miarę wzrostu biznesu</li>
+            </ul>
+          </article>
+
         </div>
       </div>
     </section>
+
 
 
     <!-- ═══════════════════════════════════════
@@ -439,199 +436,233 @@
     ═══════════════════════════════════════ -->
 
     <section class="section" id="work" aria-labelledby="work-heading"
-             style="background: var(--bg-elevated); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            style="background: var(--bg-elevated); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
       <div class="container">
 
         <div class="section__header">
           <span class="eyebrow">Projekty</span>
           <h2 id="work-heading" class="reveal">Wybrane realizacje.</h2>
           <p class="reveal">
-            Każdy projekt zaczynał się od problemu biznesowego, nie od briefu
-            graficznego. Poniżej — co było nie tak i co się zmieniło.
+            Każdy projekt zaczynał się od konkretnego problemu — nie od briefu
+            graficznego. Poniżej — co było nie tak i co powstało w odpowiedzi.
           </p>
         </div>
 
         <div class="work__grid">
 
-          <!-- Card 1 -->
+          <!-- Card 1 — Atelier Meridian -->
           <article class="card reveal">
             <div class="card__image">
-              <div class="card__image-placeholder" aria-label="Podgląd projektu Klinika Uśmiechu">
-                <span class="placeholder-label">klinika-usmiech.pl</span>
-              </div>
+              <img
+                src="assets/screenshots/atelier-meridian.png"
+                alt="Podgląd projektu Atelier Meridian"
+                class="card__img"
+                loading="lazy"
+              >
               <div class="card__image-overlay" aria-hidden="true">
-                <a href="case-study.html" class="btn-link" tabindex="-1">
-                  Zobacz case study
+                <a href="https://github.com/adsutori/atelier-meridian"
+                  target="_blank" rel="noopener noreferrer"
+                  class="btn-link" tabindex="-1">
+                  Zobacz projekt
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
               </div>
             </div>
             <div class="card__body">
               <div class="card__meta">
-                <span class="card__tag">Gabinet medyczny</span>
+                <span class="card__tag">Doradztwo inwestycyjne</span>
                 <span class="card__tag">Landing page</span>
               </div>
-              <h3 class="card__title">Klinika Uśmiechu</h3>
+              <h3 class="card__title">Atelier Meridian</h3>
               <p class="card__problem">
-                200 odwiedzin miesięcznie, zero zapytań z formularza.
-                Strona wyglądała poprawnie, ale nie prowadziła użytkownika
-                do żadnej decyzji.
+                Firmy doradcze z segmentu premium tracą klientów na pierwszym
+                wrażeniu — strona nie komunikuje poziomu usługi. Tu: editorial
+                design, który mówi "zaufanie" zanim klient przeczyta pierwsze zdanie.
               </p>
               <div class="card__metric">
-                <span class="card__metric-value" data-count="340">+340%</span>
-                <span class="card__metric-label">zapytań w pierwszym miesiącu</span>
+                <span class="card__metric-value">100%</span>
+                <span class="card__metric-label">custom — zero frameworków CSS</span>
               </div>
             </div>
             <div class="card__footer">
               <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
                 <span class="tag">HTML/CSS</span>
-                <span class="tag">JS</span>
-                <span class="tag">Supabase</span>
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">Responsive</span>
               </div>
-              <a href="case-study.html" class="btn-link">
-                Case study
+              <a href="https://github.com/adsutori/atelier-meridian"
+                target="_blank" rel="noopener noreferrer" class="btn-link">
+                GitHub
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
           </article>
 
-          <!-- Card 2 -->
+          <!-- Card 2 — RallyPay -->
           <article class="card reveal reveal-delay-1">
             <div class="card__image">
-              <div class="card__image-placeholder" aria-label="Podgląd projektu RestaurantOS">
-                <span class="placeholder-label">restaurant-os.app</span>
-              </div>
+              <img
+                src="assets/screenshots/rallypay.png"
+                alt="Podgląd projektu RallyPay"
+                class="card__img"
+                loading="lazy"
+              >
               <div class="card__image-overlay" aria-hidden="true">
-                <a href="case-study.html" class="btn-link" tabindex="-1">
-                  Zobacz case study
+                <a href="https://rallypay.vercel.app/"
+                  target="_blank" rel="noopener noreferrer"
+                  class="btn-link" tabindex="-1">
+                  Zobacz projekt
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
               </div>
             </div>
             <div class="card__body">
               <div class="card__meta">
-                <span class="card__tag">SaaS / Gastronomia</span>
-                <span class="card__tag">Web app</span>
+                <span class="card__tag">Fintech</span>
+                <span class="card__tag">Kampania produktowa</span>
               </div>
-              <h3 class="card__title">RestaurantOS</h3>
+              <h3 class="card__title">RallyPay</h3>
               <p class="card__problem">
-                Właściciel restauracji zarządzał rezerwacjami przez Excela
-                i WhatsApp. Potrzebował prostego systemu, który nie wymaga
-                szkolenia personelu.
+                Produkty fintech giną w morzu podobnych stron. RallyPay pokazuje,
+                że można wyróżnić się osobowością marki — bold typografia, sticker
+                aesthetic i ruch, który zatrzymuje scroll.
               </p>
               <div class="card__metric">
-                <span class="card__metric-value">3 tyg.</span>
-                <span class="card__metric-label">od briefu do wdrożenia</span>
+                <span class="card__metric-value">Live</span>
+                <span class="card__metric-label">wdrożony na Vercel</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">Motion</span>
+              </div>
+              <a href="https://rallypay.vercel.app/"
+                target="_blank" rel="noopener noreferrer" class="btn-link">
+                Demo
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 — Aether Vault -->
+          <article class="card reveal reveal-delay-2">
+            <div class="card__image">
+              <img
+                src="assets/screenshots/aether-vault.png"
+                alt="Podgląd projektu Aether Vault"
+                class="card__img"
+                loading="lazy"
+              >
+              <div class="card__image-overlay" aria-hidden="true">
+                <a href="https://aether-vault-livid.vercel.app/"
+                  target="_blank" rel="noopener noreferrer"
+                  class="btn-link" tabindex="-1">
+                  Zobacz projekt
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__tag">Enterprise SaaS</span>
+                <span class="card__tag">B2B marketing</span>
+              </div>
+              <h3 class="card__title">Aether Vault</h3>
+              <p class="card__problem">
+                B2B SaaS musi jednocześnie robić wrażenie i budować zaufanie —
+                trudne połączenie. Glassmorphism, architektura produktu jako
+                narracja i sygnały compliance, które mówią do CISO, nie do
+                designera.
+              </p>
+              <div class="card__metric">
+                <span class="card__metric-value">Live</span>
+                <span class="card__metric-label">wdrożony na Vercel</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">Glassmorphism</span>
+              </div>
+              <a href="https://aether-vault-livid.vercel.app/"
+                target="_blank" rel="noopener noreferrer" class="btn-link">
+                Demo
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4 — Resumo -->
+          <article class="card reveal reveal-delay-3">
+            <div class="card__image">
+              <img
+                src="assets/screenshots/resumo.png"
+                alt="Podgląd projektu Resumo"
+                class="card__img"
+                loading="lazy"
+              >
+              <div class="card__image-overlay" aria-hidden="true">
+                <a href="https://github.com/twoj-nick/resumo"
+                  target="_blank" rel="noopener noreferrer"
+                  class="btn-link" tabindex="-1">
+                  Zobacz projekt
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__tag">SaaS / Produktowy</span>
+                <span class="card__tag">Full-stack app</span>
+              </div>
+              <h3 class="card__title">Resumo</h3>
+              <p class="card__problem">
+                Tworzenie CV to problem, który większość ludzi rozwiązuje w Wordzie
+                z 2012 roku. Resumo to pełna aplikacja — kreator krok po kroku,
+                eksport PDF, udostępnianie linkiem i dashboard do zarządzania
+                dokumentami.
+              </p>
+              <div class="card__metric">
+                <span class="card__metric-value">Full-stack</span>
+                <span class="card__metric-label">Django · PostgreSQL · PDF export</span>
               </div>
             </div>
             <div class="card__footer">
               <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
                 <span class="tag">Django</span>
                 <span class="tag">PostgreSQL</span>
-                <span class="tag">Docker</span>
+                <span class="tag">WeasyPrint</span>
               </div>
-              <a href="case-study.html" class="btn-link">
-                Case study
+              <a href="https://github.com/twoj-nick/resumo"
+                target="_blank" rel="noopener noreferrer" class="btn-link">
+                GitHub
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="card reveal reveal-delay-2">
-            <div class="card__image">
-              <div class="card__image-placeholder" aria-label="Podgląd projektu Kancelaria Nowak">
-                <span class="placeholder-label">kancelaria-nowak.pl</span>
-              </div>
-              <div class="card__image-overlay" aria-hidden="true">
-                <a href="case-study.html" class="btn-link" tabindex="-1">
-                  Zobacz case study
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__body">
-              <div class="card__meta">
-                <span class="card__tag">Prawo</span>
-                <span class="card__tag">Redesign</span>
-              </div>
-              <h3 class="card__title">Kancelaria Nowak</h3>
-              <p class="card__problem">
-                Strona z 2017 roku, wyglądająca gorzej niż konkurencja.
-                Klienci pytali o cenę przez telefon, bo strona nie
-                odpowiadała na żadne pytania.
-              </p>
-              <div class="card__metric">
-                <span class="card__metric-value" data-count="60">−60%</span>
-                <span class="card__metric-label">bounce rate po redesignie</span>
-              </div>
-            </div>
-            <div class="card__footer">
-              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Next.js</span>
-                <span class="tag">Tailwind</span>
-                <span class="tag">Neon</span>
-              </div>
-              <a href="case-study.html" class="btn-link">
-                Case study
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="card reveal reveal-delay-3">
-            <div class="card__image">
-              <div class="card__image-placeholder" aria-label="Podgląd projektu FitTrack">
-                <span class="placeholder-label">fittrack.app</span>
-              </div>
-              <div class="card__image-overlay" aria-hidden="true">
-                <a href="case-study.html" class="btn-link" tabindex="-1">
-                  Zobacz case study
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__body">
-              <div class="card__meta">
-                <span class="card__tag">Fitness / SaaS</span>
-                <span class="card__tag">MVP</span>
-              </div>
-              <h3 class="card__title">FitTrack MVP</h3>
-              <p class="card__problem">
-                Trener personalny z 200 klientami zarządzał planami
-                przez PDF-y i WhatsApp. Potrzebował aplikacji, którą
-                klienci faktycznie będą używać.
-              </p>
-              <div class="card__metric">
-                <span class="card__metric-value">4 tyg.</span>
-                <span class="card__metric-label">od zera do działającego MVP</span>
-              </div>
-            </div>
-            <div class="card__footer">
-              <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Django</span>
-                <span class="tag">Supabase</span>
-                <span class="tag">Docker</span>
-              </div>
-              <a href="case-study.html" class="btn-link">
-                Case study
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
@@ -647,6 +678,12 @@
     ═══════════════════════════════════════ -->
 
     <section class="section process" id="process" aria-labelledby="process-heading">
+      <div class="process__bg" aria-hidden="true">
+        <!-- <div class="process__bg-image"></div> -->
+        <div class="hero__glow"></div>
+        <div class="hero__glow-secondary"></div>
+      </div>
+
       <div class="container">
 
         <div class="process__header reveal">
@@ -654,7 +691,7 @@
           <h2 id="process-heading">Kontrolujesz<br>każdy szczegół.</h2>
           <p class="process__subtitle">
             Dobra współpraca zaczyna się od jasnych zasad.
-            Dlatego zanim cokolwiek zbuduję — pokazuję dokładnie jak to wygląda.
+            Dlatego zanim cokolwiek zbuduję — pokazuję dokładnie jak wygląda plan działań.
           </p>
         </div>
 
@@ -672,7 +709,7 @@
             <div class="process__card">
               <div class="process__card-tag">Bezpłatnie · 30 min</div>
               <h3 class="process__card-title">Diagnoza</h3>
-              <p class="process__card-desc">Rozmawiamy o Twoim biznesie i celach. Bez zobowiązań — jeśli nie jestem właściwym wyborem, powiem to wprost.</p>
+              <p class="process__card-desc">Rozmawiamy o Twoim biznesie i celach. Bez zobowiązań — możesz po prostu sprawdzić czy jestem właściwym wyborem.</p>
             </div>
           </div>
 
@@ -682,9 +719,9 @@
               <span class="process__dot-num">02</span>
             </div>
             <div class="process__card">
-              <div class="process__card-tag">1–2 dni robocze</div>
-              <h3 class="process__card-title">Oferta & umowa</h3>
-              <p class="process__card-desc">Dostajesz konkretny plan: co robimy, ile kosztuje i kiedy będzie gotowe. Zero niespodzianek.</p>
+              <div class="process__card-tag">1–5 dni</div>
+              <h3 class="process__card-title">Szczegóły, oferta, umowa</h3>
+              <p class="process__card-desc">Podajesz mi wymagania. Dostajesz konkretny plan: co robimy, ile kosztuje i kiedy będzie gotowe.</p>
             </div>
           </div>
 
@@ -694,9 +731,9 @@
               <span class="process__dot-num">03</span>
             </div>
             <div class="process__card">
-              <div class="process__card-tag">1–4 tygodnie</div>
-              <h3 class="process__card-title">Design & dev</h3>
-              <p class="process__card-desc">Buduję iteracyjnie z Twoim feedbackiem. Widzisz postęp na każdym etapie.</p>
+              <div class="process__card-tag">1–8 tygodni</div>
+              <h3 class="process__card-title">Design & development</h3>
+              <p class="process__card-desc">Buduję iteracyjnie z Twoim feedbackiem. Widzisz postęp na każdym etapie. Czas zależy od wielkości projektu.</p>
             </div>
           </div>
 
@@ -707,8 +744,8 @@
             </div>
             <div class="process__card">
               <div class="process__card-tag">Dzień launchu</div>
-              <h3 class="process__card-title">Launch & analityka</h3>
-              <p class="process__card-desc">Wdrożenie + mierzenie konwersji. Wiesz ile osób wchodzi i ile zostawia kontakt.</p>
+              <h3 class="process__card-title">1 dzień</h3>
+              <p class="process__card-desc">Wdrożenie strony. Wykupienie hostingu, domeny, przekazanie projektu w Twoje ręce.</p>
             </div>
           </div>
 
@@ -718,9 +755,9 @@
               <span class="process__dot-num">05</span>
             </div>
             <div class="process__card">
-              <div class="process__card-tag">Po miesiącu</div>
-              <h3 class="process__card-title">Optymalizacja</h3>
-              <p class="process__card-desc">Sprawdzamy dane — gdzie wypadają użytkownicy i co warto poprawić.</p>
+              <div class="process__card-tag">Długoterminowo</div>
+              <h3 class="process__card-title">Utrzymanie & wsparcie</h3>
+              <p class="process__card-desc">Aktualizacje, poprawki, nowe podstrony — nie zostawiam Cię po launchu. Strona rośnie razem z biznesem.</p>
             </div>
           </div>
 
@@ -997,13 +1034,18 @@
     ═══════════════════════════════════════ -->
 
     <section class="final-cta" id="contact" aria-labelledby="cta-heading">
+      
+      <div class="cta__bg" aria-hidden="true">
+        <div class="cta__bg-image"></div>
+        <div class="final-cta__glow" aria-hidden="true"></div>
+      </div>
 
-      <div class="final-cta__glow" aria-hidden="true"></div>
+      
 
       <div class="container">
         <div class="final-cta__inner">
 
-          <span class="eyebrow reveal">Zacznijmy</span>
+          <span class="eyebrow reveal">Porozmawiajmy</span>
 
           <h2 id="cta-heading" class="reveal">
             Zacznijmy od rozmowy.<br>Bez zobowiązań, bez presji.

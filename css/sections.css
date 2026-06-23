@@ -33,7 +33,6 @@
   background-repeat: no-repeat;
 
   mix-blend-mode: luminosity;
-  opacity: 0.18;
   filter: hue-rotate(10deg) saturate(0.7) brightness(0.6);
 
   /* Idle zoom — bardzo powolny, ledwo zauważalny */
@@ -910,6 +909,43 @@
   margin-top: var(--space-12);
 }
 
+/* PROCESS */
+
+.process {
+  position: relative;
+  overflow: hidden;
+}
+
+.process__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.process__bg-image {
+  position: absolute;
+  inset: -4%;         
+  width: 108%;
+  height: 108%;
+  z-index: 0;
+
+  background-image: url('../assets/cta1.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  mix-blend-mode: luminosity;
+  filter: hue-rotate(15deg) saturate(0.8) brightness(0.7);
+
+  /* Idle zoom — bardzo powolny, ledwo zauważalny */
+  animation: hero-bg-breathe 18s ease-in-out infinite alternate;
+
+  /* Płynne przejście dla parallax z myszką */
+  transition: transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
 /* ── NAGŁÓWEK ───────────────────────────────────────── */
 
 .process__header {
@@ -1292,6 +1328,36 @@
 }
 
 /* ─── FINAL CTA ─── */
+
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cta__bg-image {
+  position: absolute;
+  inset: -4%;          /* nadmiar żeby zoom nie pokazał krawędzi */
+  width: 108%;
+  height: 108%;
+  z-index: 0;
+
+  background-image: url('../assets/background-cta.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  mix-blend-mode: luminosity;
+  filter: hue-rotate(10deg) saturate(0.7) brightness(0.6);
+
+  /* Idle zoom — bardzo powolny, ledwo zauważalny */
+  animation: hero-bg-breathe 18s ease-in-out infinite alternate;
+
+  /* Płynne przejście dla parallax z myszką */
+  transition: transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
 
 .final-cta {
   text-align: center;
