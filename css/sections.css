@@ -264,6 +264,21 @@
   }
 }
 
+.hero__break::before {
+  content: '\A';
+  white-space: pre;
+}
+
+@media (max-width: 1100px) {
+  .hero__break::before {
+    content: ' ';
+    white-space: normal;
+  }
+  .hero__br {
+    display: none;
+  }
+}
+
 /* ─── PROOF BAR ─── */
 
 .proof-bar {
