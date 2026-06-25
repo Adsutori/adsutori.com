@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
-h1 { font-size: var(--text-hero); font-weight: 800; }
+h1 { font-weight: 800; }
 h2 { font-size: var(--text-4xl);  font-weight: 700; letter-spacing: -0.025em; }
 h3 { font-size: var(--text-2xl);  font-weight: 700; }
 h4 { font-size: var(--text-xl);   font-weight: 600; }
@@ -155,8 +155,6 @@ body::after {
   h2 { font-size: var(--text-3xl); }
   h3 { font-size: var(--text-xl); }
 }
-
-
 /* ============================================
    CUSTOM SCROLLBAR
    Webkit (Chrome, Edge, Safari) + Firefox

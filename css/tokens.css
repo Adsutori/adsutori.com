@@ -48,7 +48,7 @@
   --text-4xl:  3rem;       /* 48px */
   --text-5xl:  4rem;       /* 64px */
   --text-6xl:  5.5rem;     /* 88px */
-  --text-hero: clamp(3rem, 8vw, 6.5rem);
+  --text-hero: clamp(1.75rem, 5.5vw, 6.5rem);
 
   /* === SPACING (8px base) === */
 
