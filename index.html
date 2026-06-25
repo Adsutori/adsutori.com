@@ -17,6 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/background-hero.webp">
+  <link rel="preload" as="image" href="assets/background-cta.webp">
 </head>
 
 <body>
@@ -330,9 +332,10 @@
               <!-- Thumbnail z przyciskiem play -->
               <div class="about__video-thumb" id="videoThumb">
                 <img
-                  src="assets/video-thumbnail.jpg"
+                  src="assets/video-thumbnail.webp"
                   alt="Krzysiek — Adsutori"
                   class="about__video-img"
+                  loading="lazy"
                 />
                 <button class="about__play-btn" id="playBtn" aria-label="Odtwórz wideo">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -454,7 +457,7 @@
           <article class="card reveal">
             <div class="card__image">
               <img
-                src="assets/screenshots/atelier-meridian.png"
+                src="assets/screenshots/atelier-meridian.webp"
                 alt="Podgląd projektu Atelier Meridian"
                 class="card__img"
                 loading="lazy"
@@ -508,7 +511,7 @@
           <article class="card reveal reveal-delay-1">
             <div class="card__image">
               <img
-                src="assets/screenshots/rallypay.png"
+                src="assets/screenshots/rallypay.webp"
                 alt="Podgląd projektu RallyPay"
                 class="card__img"
                 loading="lazy"
@@ -562,7 +565,7 @@
           <article class="card reveal reveal-delay-2">
             <div class="card__image">
               <img
-                src="assets/screenshots/aether-vault.png"
+                src="assets/screenshots/aether-vault.webp"
                 alt="Podgląd projektu Aether Vault"
                 class="card__img"
                 loading="lazy"
@@ -617,7 +620,7 @@
           <article class="card reveal reveal-delay-3">
             <div class="card__image">
               <img
-                src="assets/screenshots/resumo.png"
+                src="assets/screenshots/resumo.webp"
                 alt="Podgląd projektu Resumo"
                 class="card__img"
                 loading="lazy"

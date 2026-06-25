@@ -29,7 +29,7 @@
   height: 108%;
   z-index: 0;
 
-  background-image: url('../assets/background-hero.jpg');
+  background-image: url('../assets/background-hero.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -967,14 +967,14 @@
   pointer-events: none;
 }
 
-.process__bg-image {
+/* .process__bg-image {
   position: absolute;
   inset: -4%;         
   width: 108%;
   height: 108%;
   z-index: 0;
 
-  background-image: url('../assets/cta1.jpg');
+  background-image: url('../assets/cta1.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -982,13 +982,11 @@
   mix-blend-mode: luminosity;
   filter: hue-rotate(15deg) saturate(0.8) brightness(0.7);
 
-  /* Idle zoom — bardzo powolny, ledwo zauważalny */
   animation: hero-bg-breathe 18s ease-in-out infinite alternate;
 
-  /* Płynne przejście dla parallax z myszką */
   transition: transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
-}
+} */
 
 /* ── NAGŁÓWEK ───────────────────────────────────────── */
 
@@ -1387,7 +1385,7 @@
   height: 108%;
   z-index: 0;
 
-  background-image: url('../assets/background-cta.jpg');
+  background-image: url('../assets/background-cta.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
