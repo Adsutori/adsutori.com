@@ -240,7 +240,6 @@
   opacity: 1;
 }
 
-/* Tablet */
 @media (max-width: 1024px) {
   .hero {
     padding-bottom: var(--space-4);
@@ -259,8 +258,14 @@
   }
 
   .hero__actions {
-    align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero__actions .btn-primary,
+  .hero__actions .btn-secondary {
+    width: auto !important;
   }
 }
 
@@ -279,6 +284,8 @@
   }
 }
 
+
+
 /* ─── PROOF BAR ─── */
 
 .proof-bar {
@@ -292,20 +299,21 @@
 .proof-bar__inner {
   display: flex;
   align-items: center;
-  gap: var(--space-10);
-  flex-wrap: wrap;
+  gap: clamp(0.75rem, 4vw, var(--space-10)); /* było: var(--space-10) */
+  flex-wrap: nowrap; /* było: wrap */
 }
 
 .proof-bar__stat {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  flex-shrink: 0;
+  flex-shrink: 1; /* było: 0 */
+  min-width: 0;   /* dodaj */
 }
 
 .proof-bar__stat-value {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: clamp(1.25rem, 5vw, var(--text-xl)); /* było: var(--text-xl) */
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.03em;
@@ -324,7 +332,7 @@
   width: 1px;
   height: 32px;
   background: var(--border-default);
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .proof-bar__quote {
