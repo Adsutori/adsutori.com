@@ -14,14 +14,16 @@ const isLocalVideo = !VIDEO_SRC.startsWith('http');
 if (playBtn && videoEmbed) {
   playBtn.addEventListener('click', () => {
 
-    // 1. Ukryj thumbnail
+    // Ukryj thumbnail
     videoThumb.style.opacity = '0';
     videoThumb.style.pointerEvents = 'none';
 
-    // 2. Pokaż kontener
+    // Pokaż kontener
     videoEmbed.removeAttribute('hidden');
 
-    // 3. Wstrzyknij element dopiero teraz — autoplay zadziała
+    // Guard — nie twórz drugiego elementu jeśli już istnieje
+    if (videoEmbed.querySelector('video, iframe')) return;
+
     if (isLocalVideo) {
       const video = document.createElement('video');
       video.src = VIDEO_SRC;
@@ -31,7 +33,6 @@ if (playBtn && videoEmbed) {
       video.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;';
       videoEmbed.appendChild(video);
       video.play().catch(() => {
-        // fallback jeśli przeglądarka zablokuje
         video.muted = true;
         video.play();
       });
@@ -46,4 +47,5 @@ if (playBtn && videoEmbed) {
 
   });
 }
+
 
